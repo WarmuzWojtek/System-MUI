@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import {ThemeProvider} from '@material-ui/core/styles'
+import { theme } from './theme'
+import Navigation from './Components/Navigation/Navigation'
+
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
+      <Navigation/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,6 +25,7 @@ function App() {
         </a>
       </header>
     </div>
+    </ThemeProvider>
   );
 }
 
