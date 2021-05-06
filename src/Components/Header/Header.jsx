@@ -16,16 +16,27 @@ const useStyles = makeStyles({
   root: {
     height: '100vh',
     width: '100%',
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/images/industry.jpg'})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL + '/images/industry1.jpg'})`,
     maxWidth: '100%',
     backgroundSize: 'cover',
     backgroundPosition: "bottom left",
     backgroundRepeat: 'no-repeat',
     margin: 0,
     padding: 0,
-
-
+    position: 'relative',
   },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    width: '100%',
+    height: '100%',
+    zIndex: 1,
+  },
+  up: {
+    zIndex: 3,
+  }
 
 })
 
@@ -39,21 +50,22 @@ const Header = () => {
     <ThemeProvider theme={theme}>
 
       <Container className={classes.root}>
-        <Navigation />
-        <Grid container>
-          <Grid item xs={12} sm={6} style={{ height: '90vh', backdropFilter: 'grayscale(50%)' }} container alignItems='center' >
+        <Navigation className={classes.up} />
+        <Grid container >
+          <Grid item xs={12} sm={6} style={{ height: '90vh', backdropFilter: 'grayscale(50%)' }} container alignItems='center' className={classes.up}>
             <Container >
               <img src={mainImage} alt='' style={{ width: '50%' }} />
             </Container>
           </Grid>
-          <Grid item xs={12} sm={6} style={{ height: '90vh' }} container alignItems='center' >
+          <Grid item xs={12} sm={6} style={{ height: '90vh' }} container alignItems='center' className={classes.up}>
             <Container>
-              <Typography variant='h2' style={{ textAlign: "left", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
+              <Typography variant='h1' style={{ textAlign: "left", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
               <Typography variant='h4' style={{ textAlign: "left", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
               <Button variant='contained' color='primary' style={{ margin: "40px 0 0 200px", color: 'white' }}>Dowiedz się więcej</Button>
             </Container>
           </Grid>
         </Grid>
+        <div className={classes.overlay}></div>
       </Container>
     </ThemeProvider>
 
