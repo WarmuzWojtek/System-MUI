@@ -3,13 +3,15 @@ import './App.css';
 import {ThemeProvider} from '@material-ui/core/styles'
 import { theme } from './theme'
 import Navigation from './Components/Navigation/Navigation'
+import Header from './Components/Header/Header'
+import 'fontsource-roboto';
 
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Navigation/>
+      <Header/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
