@@ -59,7 +59,12 @@ const Header = () => {
         <Grid container >
           <Grid item xs={12} sm={6} style={{ height: '90vh', backdropFilter: 'grayscale(50%)' }} container alignItems='center' className={classes.up}>
             <Container >
-              <img src={mainImage} alt='' style={{ width: '50%' }} />
+              <Collapse
+                in={checked}
+                {...(checked ? { timeout: 1000 } : {})}
+              >
+                <img src={mainImage} alt='' style={{ width: '50%' }} />
+              </Collapse>
             </Container>
           </Grid>
           <Grid item xs={12} sm={6} style={{ height: '90vh' }} container alignItems='center' className={classes.up}>

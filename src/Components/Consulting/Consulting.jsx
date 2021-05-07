@@ -21,7 +21,11 @@ const useStyles = makeStyles((theme) => {
       width: '40%',
       padding: theme.spacing(3),
       margin: theme.spacing(2),
-
+      '@media(max-width:860px)': {
+        width: '90%',
+        padding: theme.spacing(1),
+        margin: theme.spacing(1),
+      }
     },
     image: {
       width: '100%',
