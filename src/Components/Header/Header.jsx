@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { theme } from '../../theme'
 import { ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -8,7 +8,8 @@ import Grid from '@material-ui/core/Grid'
 import mainImage from '../../eco-nature.svg'
 import Navigation from '../Navigation/Navigation'
 import '../../App.css'
-
+import { Link as Scroll } from 'react-scroll'
+import { Collapse } from '@material-ui/core';
 
 
 
@@ -46,6 +47,10 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setChecked(true)
+  }, []);
   return (
     <ThemeProvider theme={theme}>
 
@@ -59,9 +64,16 @@ const Header = () => {
           </Grid>
           <Grid item xs={12} sm={6} style={{ height: '90vh' }} container alignItems='center' className={classes.up}>
             <Container>
-              <Typography variant='h1' style={{ textAlign: "left", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
-              <Typography variant='h4' style={{ textAlign: "left", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
-              <Button variant='contained' color='primary' style={{ margin: "40px 0 0 200px", color: 'white' }}>Dowiedz się więcej</Button>
+              <Collapse
+                in={checked}
+                {...(checked ? { timeout: 1000 } : {})}
+              >
+                <Typography variant='h1' style={{ textAlign: "left", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
+                <Typography variant='h4' style={{ textAlign: "left", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
+                <Scroll to='About' smooth='true'>
+                  <Button variant='contained' color='primary' style={{ margin: "40px 0 0 200px", color: 'white' }}>Dowiedz się więcej</Button>
+                </Scroll>
+              </Collapse>
             </Container>
           </Grid>
         </Grid>
