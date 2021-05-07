@@ -1,12 +1,14 @@
-import { Typography } from '@material-ui/core';
+import { Collapse, Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
+import useWindowPosition from '../../Hook/useWIndowPosition';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => {
   return {
     root: {
-      minHeight: "30vh",
+      minHeight: "80vh",
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-between'
@@ -16,11 +18,16 @@ const useStyles = makeStyles((theme) => {
       padding: theme.spacing(3),
       fontFamily: 'Play',
       borderBottom: '2px solid black',
+      '@media(max-width:860px)': {
+        fontSize: '24px',
+      }
     },
     paperImage: {
       width: '40%',
       padding: theme.spacing(3),
       margin: theme.spacing(2),
+      display: 'flex',
+      alignItems: 'center',
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
@@ -30,22 +37,30 @@ const useStyles = makeStyles((theme) => {
     },
     image: {
       width: '100%',
-    }
-
+    },
+    container: {
+      minHeight: '80vh',
+    },
   }
 })
 
 
 const About = () => {
   const classes = useStyles();
+  const checked = useWindowPosition('Header', 0.3);
   return (
-    <div id='About'>
-      <Container className={classes.root}>
-        <Typography variant='h2' className={classes.title}>O FIRMIE</Typography>
-        <Paper className={classes.paperImage} elevation='none'>
+    <div id='About' className={classes.container}>
+
+      <Container className={classes.root} >
+        <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
+          <Typography variant='h2' className={classes.title} checked={checked}>O FIRMIE</Typography>
+        </Slide >
+
+        <Paper className={classes.paperImage} elevation='none' >
           <img src={process.env.PUBLIC_URL + '/images/team.png'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation='none'>
+
+        <Paper className={classes.paperImage} elevation='none' >
           <Typography variant='subtitle1' align='justify' >
 
 
@@ -59,7 +74,9 @@ const About = () => {
 
         </Typography>
         </Paper>
+
       </Container>
+
     </div>
   );
 }
