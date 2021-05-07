@@ -1,39 +1,54 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import { Link as Scroll } from 'react-scroll'
+import { Typography } from '@material-ui/core';
 
 
-const useStyles = makeStyles({
-  root: {
-    background: 'none',
-  },
-  item: {
-    color: 'white',
+const useStyles = makeStyles((theme) => {
+  return {
+    root: {
+      background: 'none',
+    },
+    item: {
+      color: 'white',
+      margin: theme.spacing(2),
+      cursor: 'pointer',
+      transition: '0.3s',
+      '&:hover': {
+        borderBottom: '3px solid white',
+        color: theme.palette.secondary,
+      },
+    },
+
   }
 });
 
 export default function Menu() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      showLabels
-      className={classes.root}
-    > <Scroll to='About' smooth='true'>
-        <BottomNavigationAction label="O FIRMIE" className={classes.item} />
-      </Scroll>
-      <BottomNavigationAction label="ODPADY PRZEMYSŁOWE" className={classes.item} />
-      <BottomNavigationAction label="DORADZTWO" className={classes.item} />
-      <BottomNavigationAction label="DECYZJE" className={classes.item} />
-      <BottomNavigationAction label="KONTAKT" className={classes.item} />
+    <div
 
-    </BottomNavigation>
+      className={classes.root}
+    >
+      <Scroll to='About' smooth='true'>
+        <Typography className={classes.item} variant='a'>O FIRMIE</Typography>
+      </Scroll>
+      <Scroll to='Waste' smooth='true'>
+        <Typography className={classes.item} variant='a'>ODPADY PRZEMYSŁOWE</Typography>
+      </Scroll>
+      <Scroll to='Consulting' smooth='true'>
+        <Typography className={classes.item} variant='a'>DORADZTWO</Typography>
+      </Scroll>
+      <Scroll to='About' smooth='true'>
+        <Typography className={classes.item} variant='a'>DECYZJE</Typography>
+      </Scroll>
+      <Scroll to='About' smooth='true'>
+        <Typography className={classes.item} variant='a'>KONTAKT</Typography>
+      </Scroll>
+
+
+    </div>
   );
 }
