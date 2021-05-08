@@ -83,8 +83,12 @@ export default function ButtonAppBar() {
             <Scroll to='Consulting' smooth='true'>
               <MenuItem onClick={handleClose}>DORADZTWO</MenuItem>
             </Scroll>
-            <MenuItem onClick={handleClose}>DECYZJE</MenuItem>
-            <MenuItem onClick={handleClose}>KONTAKT</MenuItem>
+            <Scroll to='Consulting' smooth='true'>
+              <MenuItem onClick={handleClose}>DECYZJE</MenuItem>
+            </Scroll>
+            <Scroll to='Contact' smooth='true'>
+              <MenuItem onClick={handleClose}>KONTAKT</MenuItem>
+            </Scroll>
           </Menu>
           {(size < 960) ? <CompanyName /> : <Menus />}
         </Toolbar>
