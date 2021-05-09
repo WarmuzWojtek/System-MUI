@@ -9,6 +9,7 @@ import Menus from '../Menu/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link as Scroll } from 'react-scroll'
+import { useEffect } from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,9 +48,12 @@ function CompanyName() {
   )
 }
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
   const size = window.innerWidth;
+
+
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
@@ -83,13 +87,15 @@ export default function ButtonAppBar() {
             <Scroll to='Consulting' smooth='true'>
               <MenuItem onClick={handleClose}>DORADZTWO</MenuItem>
             </Scroll>
-            <Scroll to='Consulting' smooth='true'>
+            <Scroll to='Documents' smooth='true'>
               <MenuItem onClick={handleClose}>DECYZJE</MenuItem>
             </Scroll>
             <Scroll to='Contact' smooth='true'>
               <MenuItem onClick={handleClose}>KONTAKT</MenuItem>
             </Scroll>
           </Menu>
+
+
           {(size < 960) ? <CompanyName /> : <Menus />}
         </Toolbar>
       </AppBar>

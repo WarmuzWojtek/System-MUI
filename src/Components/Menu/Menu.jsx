@@ -41,7 +41,7 @@ export default function Menu() {
       <Scroll to='Consulting' smooth='true'>
         <Typography className={classes.item} variant='a'>DORADZTWO</Typography>
       </Scroll>
-      <Scroll to='About' smooth='true'>
+      <Scroll to='Documents' smooth='true'>
         <Typography className={classes.item} variant='a'>DECYZJE</Typography>
       </Scroll>
       <Scroll to='Contact' smooth='true'>
