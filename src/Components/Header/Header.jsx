@@ -8,6 +8,7 @@ import Navigation from '../Navigation/Navigation'
 import '../../App.css'
 import { Link as Scroll } from 'react-scroll'
 import { Collapse } from '@material-ui/core';
+import { useViewport } from '../../Hook/useViewport'
 
 
 
@@ -15,9 +16,9 @@ const useStyles = makeStyles({
   root: {
     height: '100vh',
     width: '100%',
-    backgroundImage: `url(${process.env.PUBLIC_URL + '/images/industry1.jpg'})`,
+    // backgroundImage: source,
     maxWidth: '100%',
-    backgroundSize: 'cover',
+    backgroundSize: '100%',
     backgroundPosition: "bottom left",
     backgroundRepeat: 'no-repeat',
     margin: 0,
@@ -25,6 +26,9 @@ const useStyles = makeStyles({
     position: 'relative',
     animation: 'headerBcg infinite 20s linear',
     textAlign: 'center',
+    '@media(max-width:1370px)': {
+      animation: 'headerBcgTablet infinite 20s linear',
+    }
   },
   overlay: {
     position: 'absolute',
@@ -50,7 +54,32 @@ const useStyles = makeStyles({
   },
   up: {
     zIndex: 3,
+  },
+  title: {
+    textAlign: "center",
+    marginBottom: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    fontFamily: 'Play',
+    '@media(max-width:860px)': {
+      fontSize: '44px',
+    },
+    '@media(max-width:600px)': {
+      fontSize: '36px',
+    },
+  },
+  subTitle: {
+    textAlign: "center",
+    color: 'white',
+    fontFamily: 'Play',
+    '@media(max-width:860px)': {
+      fontSize: '32px',
+    },
+    '@media(max-width:600px)': {
+      fontSize: '30px',
+    },
   }
+
 })
 
 
@@ -60,18 +89,31 @@ const Header = () => {
   useEffect(() => {
     setChecked(true)
   }, []);
+
+  const { width, height } = useViewport();
+  const setSource = () => {
+    if (width < 860) {
+      return `url(${process.env.PUBLIC_URL + '/images/industry4.jpg'})`
+    } else if (width >= 860 && height > width) {
+      return `url(${process.env.PUBLIC_URL + '/images/industry6.jpg'})`
+    } else return `url(${process.env.PUBLIC_URL + '/images/industry1.jpg'})`
+  }
+  const source = setSource();
+
+
+
   return (
     <ThemeProvider theme={theme}>
       <div id='Header'>
-        <Container className={classes.root}>
+        <Container className={classes.root} style={{ backgroundImage: source }}>
           <Navigation className={classes.up} />
           <Container className={classes.content}>
             <Collapse
               in={checked}
               {...(checked ? { timeout: 1500 } : {})}
             >
-              <Typography variant='h1' style={{ textAlign: "center", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
-              <Typography variant='h4' style={{ textAlign: "center", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
+              <Typography variant='h1' className={classes.title}>P.H.U. SYSTEM</Typography>
+              <Typography variant='h4' className={classes.subTitle}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
               <Scroll to='About' smooth='true'>
                 <Button variant='contained' color='secondary' style={{ margin: "40px 0 0 0", color: 'white' }}>Dowiedz się więcej</Button>
               </Scroll>

@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => {
     paperImage: {
       display: 'flex',
       alignItems: 'flexStart',
-
       width: '40%',
       padding: theme.spacing(3),
       margin: theme.spacing(4),
@@ -49,17 +48,34 @@ const useStyles = makeStyles((theme) => {
         width: '90%',
         padding: theme.spacing(1),
         margin: theme.spacing(1),
+        justifyContent: 'center',
       }
     },
     image: {
+      display: 'block',
+      margin: '0 auto',
       width: '100%',
+      '@media(max-width:860px)': {
+        width: '60%',
+      },
+      '@media(max-width:600px)': {
+        width: '100%',
+      }
     },
     contactContent: {
       marginLeft: theme.spacing(18),
+      '@media(max-width:860px)': {
+        marginLeft: theme.spacing(0),
+        fontSize: 20,
+      }
     },
     contactTitle: {
       marginBottom: theme.spacing(3),
       marginLeft: theme.spacing(18),
+      '@media(max-width:860px)': {
+        marginLeft: theme.spacing(0),
+        fontSize: 24,
+      }
     },
     phone: {
       marginRight: theme.spacing(2),
@@ -77,13 +93,13 @@ const Contact = () => {
           < Typography variant='h2' className={classes.title}>KONTAKT</Typography>
         </Slide>
         <Paper className={classes.paperImageText} elevation='none' >
-          <Typography className={classes.contactTitle} align='left' variant='h4'>Dane kontaktowe:</Typography>
-          <Typography className={classes.contactContent} align='left' variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>
-          <Typography className={classes.contactContent} align='left' variant='h6'>26-340 Drzewica, Trzebina 70</Typography>
-          <Typography className={classes.contactContent} align='left' variant='h6'>
+          <Typography className={classes.contactTitle} variant='h4'>Dane kontaktowe:</Typography>
+          <Typography className={classes.contactContent} variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>
+          <Typography className={classes.contactContent} variant='h6'>26-340 Drzewica, Trzebina 70</Typography>
+          <Typography className={classes.contactContent} variant='h6'>
             <PhoneIcon className={classes.phone} />
             +48 604 383 868</Typography>
-          <Typography className={classes.contactContent} align='left' variant='h6' component='a' href="mailto:biuro@system-eko.eu">
+          <Typography className={classes.contactContent} variant='h6' component='a' href="mailto:biuro@system-eko.eu">
             <MailOutlineIcon className={classes.phone} />
             biuro@system-eko.eu</Typography>
           <img src={process.env.PUBLIC_URL + '/images/Email.svg'} alt='' className={classes.image} />

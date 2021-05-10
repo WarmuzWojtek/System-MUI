@@ -30,7 +30,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(1),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
-
+    '@media(max-width:860px)': {
+      paddingTop: theme.spacing(0),
+      paddingBottom: theme.spacing(0),
+    }
   },
   toolbar: {
     display: 'flex',

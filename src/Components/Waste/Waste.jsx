@@ -41,8 +41,16 @@ const useStyles = makeStyles((theme) => {
       }
     },
     image: {
+      display: 'block',
+      margin: '0 auto',
       width: '100%',
-    }
+      '@media(max-width:860px)': {
+        width: '60%',
+      },
+      '@media(max-width:600px)': {
+        width: '100%',
+      }
+    },
 
   }
 })
