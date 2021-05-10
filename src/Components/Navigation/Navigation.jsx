@@ -9,7 +9,7 @@ import Menus from '../Menu/Menu';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link as Scroll } from 'react-scroll'
-import { useEffect } from 'react';
+import { useViewport } from '../../Hook/useViewport'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appbar: {
+    fontFamily: 'Play',
     backgroundColor: 'rgba(0,0,0,0.4)',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1),
@@ -39,13 +40,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
-
+  companyName: {
+    fontFamily: 'Play',
+  }
 
 }));
 
 function CompanyName() {
+  const classes = useStyles();
   return (
-    <Typography>
+    <Typography className={classes.companyName}>
       P.H.U. SYSTEM-EKO
     </Typography>
   )
@@ -53,10 +57,7 @@ function CompanyName() {
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
-  const size = window.innerWidth;
-
-
-
+  const { width } = useViewport();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
@@ -97,9 +98,7 @@ export default function ButtonAppBar(props) {
               <MenuItem onClick={handleClose}>KONTAKT</MenuItem>
             </Scroll>
           </Menu>
-
-
-          {(size < 960) ? <CompanyName /> : <Menus />}
+          {(width < 960) ? <CompanyName /> : <Menus />}
         </Toolbar>
       </AppBar>
     </div>

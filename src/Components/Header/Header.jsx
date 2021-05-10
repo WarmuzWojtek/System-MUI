@@ -11,12 +11,10 @@ import { Collapse } from '@material-ui/core';
 import { useViewport } from '../../Hook/useViewport'
 
 
-
 const useStyles = makeStyles({
   root: {
     height: '100vh',
     width: '100%',
-    // backgroundImage: source,
     maxWidth: '100%',
     backgroundSize: '100%',
     backgroundPosition: "bottom left",
@@ -79,9 +77,7 @@ const useStyles = makeStyles({
       fontSize: '30px',
     },
   }
-
 })
-
 
 const Header = () => {
   const classes = useStyles();
@@ -100,31 +96,25 @@ const Header = () => {
   }
   const source = setSource();
 
-
-
   return (
-    <ThemeProvider theme={theme}>
-      <div id='Header'>
-        <Container className={classes.root} style={{ backgroundImage: source }}>
-          <Navigation className={classes.up} />
-          <Container className={classes.content}>
-            <Collapse
-              in={checked}
-              {...(checked ? { timeout: 1500 } : {})}
-            >
-              <Typography variant='h1' className={classes.title}>P.H.U. SYSTEM</Typography>
-              <Typography variant='h4' className={classes.subTitle}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
-              <Scroll to='About' smooth='true'>
-                <Button variant='contained' color='secondary' style={{ margin: "40px 0 0 0", color: 'white' }}>Dowiedz się więcej</Button>
-              </Scroll>
-            </Collapse>
-          </Container>
-          <div className={classes.overlay}></div>
+    <div id='Header'>
+      <Container className={classes.root} style={{ backgroundImage: source }}>
+        <Navigation className={classes.up} />
+        <Container className={classes.content}>
+          <Collapse
+            in={checked}
+            {...(checked ? { timeout: 1500 } : {})}
+          >
+            <Typography variant='h1' className={classes.title}>P.H.U. SYSTEM</Typography>
+            <Typography variant='h4' className={classes.subTitle}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
+            <Scroll to='About' smooth='true'>
+              <Button variant='contained' color='secondary' style={{ margin: "40px 0 0 0", color: 'white' }}>Dowiedz się więcej</Button>
+            </Scroll>
+          </Collapse>
         </Container>
-      </div>
-    </ThemeProvider>
-
-
+        <div className={classes.overlay}></div>
+      </Container>
+    </div>
   );
 }
 
