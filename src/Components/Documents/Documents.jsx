@@ -3,9 +3,9 @@ import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import useWindowPosition from '../../Hook/useWIndowPosition';
-import Slide from '@material-ui/core/Slide';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import AttachFileSharpIcon from '@material-ui/icons/AttachFileSharp';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => {
 
 const Documents = () => {
   const classes = useStyles();
-  const checked = useWindowPosition('About', 1.1);
+  const checked = useWindowPosition('Consulting', 2.3);
   return (
     <div className={classes.bcg} id='Documents'>
       <Container className={classes.root}>

@@ -5,7 +5,8 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Phone';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { Mail } from '@material-ui/icons';
+import useWindowPosition from '../../Hook/useWIndowPosition';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -54,11 +55,11 @@ const useStyles = makeStyles((theme) => {
       width: '100%',
     },
     contactContent: {
-      marginLeft: theme.spacing(20),
+      marginLeft: theme.spacing(18),
     },
     contactTitle: {
       marginBottom: theme.spacing(3),
-      marginLeft: theme.spacing(20),
+      marginLeft: theme.spacing(18),
     },
     phone: {
       marginRight: theme.spacing(2),
@@ -68,10 +69,13 @@ const useStyles = makeStyles((theme) => {
 
 const Contact = () => {
   const classes = useStyles();
+  const checked = useWindowPosition('Documents', 4.5);
   return (
     <div id='Contact'>
       <Container className={classes.root}>
-        <Typography variant='h2' className={classes.title}>KONTAKT</Typography>
+        <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
+          < Typography variant='h2' className={classes.title}>KONTAKT</Typography>
+        </Slide>
         <Paper className={classes.paperImageText} elevation='none' >
           <Typography className={classes.contactTitle} align='left' variant='h4'>Dane kontaktowe:</Typography>
           <Typography className={classes.contactContent} align='left' variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>

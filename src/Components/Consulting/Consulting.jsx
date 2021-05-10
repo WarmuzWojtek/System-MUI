@@ -2,6 +2,8 @@ import { Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
+import useWindowPosition from '../../Hook/useWIndowPosition';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -42,10 +44,13 @@ const useStyles = makeStyles((theme) => {
 
 const Consultant = () => {
   const classes = useStyles();
+  const checked = useWindowPosition('Waste', 1.5);
   return (
     <div id='Consulting'>
       <Container className={classes.root}>
-        <Typography variant='h2' className={classes.title}>DORADZTWO</Typography>
+        <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
+          <Typography variant='h2' className={classes.title}>DORADZTWO</Typography>
+        </Slide>
         <Paper className={classes.paperImage} elevation='none'>
           <img src={process.env.PUBLIC_URL + '/images/consultant.jpg'} alt='' className={classes.image} />
         </Paper>
