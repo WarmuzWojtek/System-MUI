@@ -31,7 +31,7 @@ export default function ContactForm() {
       <TextField id="name" label="Imię i Nazwisko" variant="outlined" />
       <TextField id="email" label="Twój Email" variant="outlined" />
       <TextField id="topic" label="Temat" variant="outlined" />
-      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={5} />
+      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={7} />
       <Button className={classes.btn} color='primary' variant='contained'>WYŚLIJ</Button>
     </form>
   );

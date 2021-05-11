@@ -3,6 +3,9 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
+import PhoneIcon from '@material-ui/icons/Phone';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import { Mail } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -23,11 +26,24 @@ const useStyles = makeStyles((theme) => {
     },
     paperImage: {
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'flexStart',
+
       width: '40%',
       padding: theme.spacing(3),
       margin: theme.spacing(4),
-      borderRadius: '20px',
+      '@media(max-width:860px)': {
+        width: '90%',
+        padding: theme.spacing(1),
+        margin: theme.spacing(1),
+      }
+    },
+    paperImageText: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flexStart',
+      width: '40%',
+      padding: theme.spacing(3),
+      margin: theme.spacing(4),
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
@@ -37,8 +53,16 @@ const useStyles = makeStyles((theme) => {
     image: {
       width: '100%',
     },
-
-
+    contactContent: {
+      marginLeft: theme.spacing(20),
+    },
+    contactTitle: {
+      marginBottom: theme.spacing(3),
+      marginLeft: theme.spacing(20),
+    },
+    phone: {
+      marginRight: theme.spacing(2),
+    },
   }
 })
 
@@ -48,7 +72,16 @@ const Contact = () => {
     <div id='Contact'>
       <Container className={classes.root}>
         <Typography variant='h2' className={classes.title}>KONTAKT</Typography>
-        <Paper className={classes.paperImage} elevation='none' >
+        <Paper className={classes.paperImageText} elevation='none' >
+          <Typography className={classes.contactTitle} align='left' variant='h4'>Dane kontaktowe:</Typography>
+          <Typography className={classes.contactContent} align='left' variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>
+          <Typography className={classes.contactContent} align='left' variant='h6'>26-340 Drzewica, Trzebina 70</Typography>
+          <Typography className={classes.contactContent} align='left' variant='h6'>
+            <PhoneIcon className={classes.phone} />
+            +48 604 383 868</Typography>
+          <Typography className={classes.contactContent} align='left' variant='h6' component='a' href="mailto:biuro@system-eko.eu">
+            <MailOutlineIcon className={classes.phone} />
+            biuro@system-eko.eu</Typography>
           <img src={process.env.PUBLIC_URL + '/images/Email.svg'} alt='' className={classes.image} />
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
