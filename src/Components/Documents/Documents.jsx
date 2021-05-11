@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import useWindowPosition from '../../Hook/useWIndowPosition';
 import Slide from '@material-ui/core/Slide';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import AttachFileSharpIcon from '@material-ui/icons/AttachFileSharp';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -29,6 +31,7 @@ const useStyles = makeStyles((theme) => {
     },
     paperImage: {
       display: 'flex',
+      flexWrap: 'wrap',
       alignItems: 'center',
       width: '40%',
       padding: theme.spacing(3),
@@ -42,6 +45,17 @@ const useStyles = makeStyles((theme) => {
     },
     image: {
       width: '100%',
+    },
+    typo: {
+      width: '90%',
+      color: 'black',
+    },
+    icon: {
+      marginRight: theme.spacing(2),
+    },
+    typoTitle: {
+      marginBottom: theme.spacing(2),
+      borderBottom: '2px solid black',
     }
 
   }
@@ -61,9 +75,30 @@ const Documents = () => {
           <img src={process.env.PUBLIC_URL + '/images/Downloading.svg'} alt='' className={classes.image} />
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
-          <Typography variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/poszerzenie.pdf'}>
-            Poszerzenie
-
+          <Typography variant='h4' className={classes.typoTitle}>Wymagane zezwolenia:</Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.6233.28.2014.pdf'}>
+            <PictureAsPdfIcon fontSize='large' className={classes.icon} />
+            Zezwolenie na zbieranie odpadów Śr.6233.28.2014
+          </Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.7645-1_9_10.pdf'}>
+            <PictureAsPdfIcon fontSize='large' className={classes.icon} />
+          Zezwolenie na zbieranie odpadów Śr.7645-1/9/2010
+          </Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/OŚZ.III.76449-9_10.pdf'}>
+            <PictureAsPdfIcon fontSize='large' className={classes.icon} />
+          Zezwolenie na transport odpadów OŚZ.III.76449-9/10
+          </Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/poszerzenie.pdf'}>
+            <PictureAsPdfIcon fontSize='large' className={classes.icon} />
+            Poszerzenie decyzji na zbieranie odpadów
+          </Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/NR_GIOŚ.pdf'}>
+            <PictureAsPdfIcon fontSize='large' className={classes.icon} />
+          Zaświadczenie o wpisie do rejestru GIOŚ
+          </Typography>
+          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/decyzje.zip'}>
+            <AttachFileSharpIcon fontSize='large' className={classes.icon} />
+          Do pobrania
           </Typography>
         </Paper>
       </Container>
