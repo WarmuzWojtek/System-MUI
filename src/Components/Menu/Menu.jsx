@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { Link as Scroll } from 'react-scroll'
 
 
 const useStyles = makeStyles({
@@ -25,8 +26,9 @@ export default function Menu() {
       }}
       showLabels
       className={classes.root}
-    >
-      <BottomNavigationAction label="O FIRMIE" className={classes.item} />
+    > <Scroll to='About' smooth='true'>
+        <BottomNavigationAction label="O FIRMIE" className={classes.item} />
+      </Scroll>
       <BottomNavigationAction label="ODPADY PRZEMYSŁOWE" className={classes.item} />
       <BottomNavigationAction label="DORADZTWO" className={classes.item} />
       <BottomNavigationAction label="DECYZJE" className={classes.item} />

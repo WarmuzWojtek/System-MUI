@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from '../Menu/Menu'
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -22,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appbar: {
     backgroundColor: 'rgba(255,255,255,0.2)',
+    padding: theme.spacing(1),
+
   },
   toolbar: {
     display: 'flex',

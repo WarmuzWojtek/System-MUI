@@ -5,10 +5,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -31,16 +28,16 @@
   color: #61dafb;
 }
 
-@keyframes spin {
+@keyframes headerBcg {
   from {
-    transform: rotate(0deg);
+    background-size: 100%;
   }
 
   to {
-    transform: rotate(360deg);
+    background-size: 110%;
   }
 }
 
-.Spin {
-  animation: spin infinite 20s linear;
+.headerBcg {
+  animation: headerBcg infinite 30s linear;
 }

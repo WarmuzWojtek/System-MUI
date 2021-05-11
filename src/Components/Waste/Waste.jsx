@@ -2,6 +2,8 @@ import { Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
+import useWindowPosition from '../../Hook/useWIndowPosition';
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -21,6 +23,9 @@ const useStyles = makeStyles((theme) => {
       padding: theme.spacing(3),
       fontFamily: 'Play',
       borderBottom: '2px solid black',
+      '@media(max-width:860px)': {
+        fontSize: '24px',
+      }
     },
     paperImage: {
       display: 'flex',
@@ -45,10 +50,13 @@ const useStyles = makeStyles((theme) => {
 
 const Waste = () => {
   const classes = useStyles();
+  const checked = useWindowPosition('About', 1.1);
   return (
-    <div className={classes.bcg}>
+    <div className={classes.bcg} id='waste'>
       <Container className={classes.root}>
-        <Typography variant='h2' className={classes.title}>ODPADY PRZEMYSŁOWE</Typography>
+        <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
+          <Typography variant='h2' className={classes.title}>ODPADY PRZEMYSŁOWE</Typography>
+        </Slide>
         <Paper className={classes.paperImage} elevation='none'>
           <img src={process.env.PUBLIC_URL + '/images/radioactive.png'} alt='' className={classes.image} />
         </Paper>

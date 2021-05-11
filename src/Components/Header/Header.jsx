@@ -4,8 +4,6 @@ import { ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
-import mainImage from '../../eco-nature.svg'
 import Navigation from '../Navigation/Navigation'
 import '../../App.css'
 import { Link as Scroll } from 'react-scroll'
@@ -25,24 +23,35 @@ const useStyles = makeStyles({
     margin: 0,
     padding: 0,
     position: 'relative',
+    animation: 'headerBcg infinite 20s linear',
+    textAlign: 'center',
   },
   overlay: {
     position: 'absolute',
     top: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: 'rgba(0,0,0,0.3)',
     width: '100%',
     height: '100%',
     zIndex: 1,
   },
+  content: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)',
+    width: '100vw',
+    height: '100vh',
+    zIndex: 3,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   up: {
     zIndex: 3,
   }
-
 })
-
-
-
 
 
 const Header = () => {
@@ -53,37 +62,24 @@ const Header = () => {
   }, []);
   return (
     <ThemeProvider theme={theme}>
-
-      <Container className={classes.root}>
-        <Navigation className={classes.up} />
-        <Grid container >
-          <Grid item xs={12} sm={6} style={{ height: '90vh', backdropFilter: 'grayscale(50%)' }} container alignItems='center' className={classes.up}>
-            <Container >
-              <Collapse
-                in={checked}
-                {...(checked ? { timeout: 1000 } : {})}
-              >
-                <img src={mainImage} alt='' style={{ width: '50%' }} />
-              </Collapse>
-            </Container>
-          </Grid>
-          <Grid item xs={12} sm={6} style={{ height: '90vh' }} container alignItems='center' className={classes.up}>
-            <Container>
-              <Collapse
-                in={checked}
-                {...(checked ? { timeout: 1000 } : {})}
-              >
-                <Typography variant='h1' style={{ textAlign: "left", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
-                <Typography variant='h4' style={{ textAlign: "left", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
-                <Scroll to='About' smooth='true'>
-                  <Button variant='contained' color='primary' style={{ margin: "40px 0 0 200px", color: 'white' }}>Dowiedz się więcej</Button>
-                </Scroll>
-              </Collapse>
-            </Container>
-          </Grid>
-        </Grid>
-        <div className={classes.overlay}></div>
-      </Container>
+      <div id='Header'>
+        <Container className={classes.root}>
+          <Navigation className={classes.up} />
+          <Container className={classes.content}>
+            <Collapse
+              in={checked}
+              {...(checked ? { timeout: 1500 } : {})}
+            >
+              <Typography variant='h1' style={{ textAlign: "center", marginBottom: 20, fontWeight: 'bold', color: 'white', fontFamily: 'Play', }}>P.H.U. SYSTEM</Typography>
+              <Typography variant='h4' style={{ textAlign: "center", color: 'white', fontFamily: 'Play', }}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
+              <Scroll to='About' smooth='true'>
+                <Button variant='contained' color='secondary' style={{ margin: "40px 0 0 0", color: 'white' }}>Dowiedz się więcej</Button>
+              </Scroll>
+            </Collapse>
+          </Container>
+          <div className={classes.overlay}></div>
+        </Container>
+      </div>
     </ThemeProvider>
 
 

@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => {
       padding: theme.spacing(3),
       fontFamily: 'Play',
       borderBottom: '2px solid black',
+      '@media(max-width:860px)': {
+        fontSize: '24px',
+      }
     },
     paperImage: {
+      display: 'flex',
+      alignItems: 'center',
       width: '40%',
       padding: theme.spacing(3),
       margin: theme.spacing(2),
