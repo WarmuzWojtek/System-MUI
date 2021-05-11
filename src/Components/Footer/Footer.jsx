@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => {
     root: {
       backgroundColor: '#e9e9e9',
       height: '8vh',
-      width: '100vw',
+      width: '100%',
       display: 'flex',
       alignItems: 'center',
     },

@@ -41,3 +41,13 @@
 .headerBcg {
   animation: headerBcg infinite 30s linear;
 }
+
+@keyframes headerBcgTablet {
+  from {
+    background-size: 120%;
+  }
+
+  to {
+    background-size: 130%;
+  }
+}
