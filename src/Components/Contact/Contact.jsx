@@ -48,10 +48,10 @@ const Contact = () => {
     <div id='Contact'>
       <Container className={classes.root}>
         <Typography variant='h2' className={classes.title}>KONTAKT</Typography>
-        <Paper className={classes.paperImage} elevation={3} >
+        <Paper className={classes.paperImage} elevation='none' >
           <img src={process.env.PUBLIC_URL + '/images/Email.svg'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation={3}>
+        <Paper className={classes.paperImage} elevation='none'>
 
           <ContactForm />
 

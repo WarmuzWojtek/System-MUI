@@ -5,6 +5,7 @@ import About from './Components/About/About'
 import Waste from './Components/Waste/Waste'
 import Consultant from './Components/Consulting/Consulting'
 import Header from './Components/Header/Header'
+import Documents from './Components/Documents/Documents.jsx'
 import Contact from './Components/Contact/Contact.jsx'
 import 'fontsource-roboto';
 
@@ -17,6 +18,7 @@ function App() {
       <About/>
       <Waste/>
       <Consultant/>
+      <Documents/>
       <Contact/>
     </div>
     </ThemeProvider>

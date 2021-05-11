@@ -62,36 +62,34 @@ const Waste = () => {
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
           <Typography variant='subtitle1' align='justify'>
+            Najczęściej odbierane przez nas odpady:<br />
+            - Zużyte urządzenia elektryczne i elektroniczne /monitory, komputery, świetlówki<br />
+            - Chemikalia laboratoryjne<br />
+            - Odpady przemysłu gumowego i tekstylnego<br />
+            - Odpady i szlamy farb drukarskich /polakierniczych/<br />
+            - Odpadowy toner drukarski<br />
+            - Odpady zawierające azbest<br />
+            - Opakowania z tworzyw sztucznych<br />
+            - Zużyte czyściwa i odzież ochronną<br />
+            - Zużyte opony<br />
+            - Zużyte akumulatory<br />
+            - Produkty spożywcze przeterminowane lub nieprzydatne do spożycia<br />
+            - Wycofane leki i kosmetyki<br />
+            - Tworzywa sztuczne<br />
+            - Odpady z budowy, remontu i demontażu obiektów budowlanych<br />
+            - Odpady ropopochodne /tj. ziemia zaolejona, smoły, osady/<br />
+            - Tłuszcze i mieszaniny olejów z separacji<br />
+            - i wiele innych<br />
+            <br />
+            Odpady przemysłowe i pozostałe:<br />
+            - Świadczymy usługi przeglądu i czyszczenia separatorów<br />
+            - Pracownicy naszej firmy wystawiają za klienta wymagane przy odbiorze odpadów dokumenty<br />
+            - Prace związane z odbiorem, transportem i unieszkodliwianiem odpadów wykonujemy– zgodnie z obowiązującymi przepisami<br />
+            - Dokładamy wszelkich starań by odbierać wszystkie rodzaje odpadów – zobacz listę odpadów<br />
 
 
 
-
-            Oferujemy profesjonalne doradztwo w zakresie obrotu i przewozu towarów niebezpiecznych ADR.
-
-            Zgodnie z Ustawą o Przewozie Drogowym Towarów Niebezpiecznych z dn. 28 września 2002 roku każdy przedsiębiorca ma obowiązek wyznaczyć uprawnionego doradcę ds bezpieczeństwa przewozu towarów niebezpiecznych ( art. 21 Ustawy j/w ). Doradca powinien posiadać państwowe uprawnienia wydane przez odpowiedni Wojewódzki Inspektorat Transportu Drogowego.
-
-            Obowiązek wyznaczenia doradcy dotyczy wszystkich przedsiębiorców wykonujących, co najmniej jedną z czynności wymienionych w Ustawie tzn:
-            - załadunek,
-            - rozładunek,
-            - transport towarów niebezpiecznych.
-
-            W zakresie naszej obsługi wykonujemy:
-            - procedury pakowania, przechowywania, załadunku, transportu i rozładunku towarów niebezpiecznych,
-            - dokumentację przewozową tj.: instrukcje bezpieczeństwa dla załogi jednostek transportowych przewożących towary ADR, dokumenty przewozowe,
-            - szkolenie załogi pojazdów oraz osób personelu biorących udział w operacjach z udziałem towarów niebezpiecznych.
-
-            Świadczymy usługowy przewóz towarów niebezpiecznych. Na życzenie klienta oferujemy doradztwo w klasyfikacji towaru niebezpiecznego do odpowiednich numerów UN substancji oraz odpowiednich warunków pakowania i przewozu towarów niebezpiecznych.
-
-            Konsultacje z zakresu przepisów ochrony środowiska:
-            - ustawy z dnia 27 kwietnia 2001 r. Prawo ochrony środowiska (t.j. Dz. U. z 2008 r., Nr 25, poz. 150 z póżn. zm.)
-            - ustawy z dnia 27 kwietnia 2001 r. o odpadach (t.j. Dz. U. z 2007 r., Nr 39, poz. 251 z późn. zm.)
-            - ustawy z dnia 29 lipca 2005 r. o zużytym sprzęcie elektrycznym i elektronicznym (Dz. U. z 2005 r., Nr 180, poz. 1495 z późn. zm.)
-
-            Sporządzanie dokumentacji:
-            - wnioski o wydanie pozwolenia na wytwarzanie odpadów.
-
-
-        </Typography>
+          </Typography>
         </Paper>
       </Container>
     </div>
