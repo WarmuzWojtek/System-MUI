@@ -52,7 +52,7 @@ const Waste = () => {
   const classes = useStyles();
   const checked = useWindowPosition('About', 1.1);
   return (
-    <div className={classes.bcg} id='waste'>
+    <div className={classes.bcg} id='Waste'>
       <Container className={classes.root}>
         <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           <Typography variant='h2' className={classes.title}>ODPADY PRZEMYSŁOWE</Typography>

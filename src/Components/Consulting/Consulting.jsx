@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => {
 const Consultant = () => {
   const classes = useStyles();
   return (
-    <div >
+    <div id='Consulting'>
       <Container className={classes.root}>
         <Typography variant='h2' className={classes.title}>DORADZTWO</Typography>
         <Paper className={classes.paperImage} elevation='none'>
@@ -51,9 +51,6 @@ const Consultant = () => {
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
           <Typography variant='subtitle1' align='justify'>
-
-
-
 
             Oferujemy profesjonalne doradztwo w zakresie obrotu i przewozu towarów niebezpiecznych ADR.
 
