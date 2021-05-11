@@ -5,7 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '../Menu/Menu'
+import Menus from '../Menu/Menu';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { Link as Scroll } from 'react-scroll'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appbar: {
-    backgroundColor: 'rgba(255,255,255,0.2)',
+    backgroundColor: 'rgba(0,0,0,0.4)',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(1),
     paddingLeft: theme.spacing(3),
@@ -31,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-  }
+  },
+
 
 }));
 
@@ -47,14 +51,42 @@ export default function ButtonAppBar() {
   const classes = useStyles();
   const size = window.innerWidth;
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="absolute" className={classes.appbar} >
         <Toolbar className={classes.toolbar}>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             <MenuIcon />
           </IconButton>
-          {(size < 960) ? <CompanyName /> : <Menu />}
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <Scroll to='About' smooth='true'>
+              <MenuItem onClick={handleClose}>O FIRMIE</MenuItem>
+            </Scroll>
+            <Scroll to='Waste' smooth='true'>
+              <MenuItem onClick={handleClose}>ODPADY PRZEMYSŁOWE</MenuItem>
+            </Scroll>
+            <Scroll to='Consulting' smooth='true'>
+              <MenuItem onClick={handleClose}>DORADZTWO</MenuItem>
+            </Scroll>
+            <MenuItem onClick={handleClose}>DECYZJE</MenuItem>
+            <MenuItem onClick={handleClose}>KONTAKT</MenuItem>
+          </Menu>
+          {(size < 960) ? <CompanyName /> : <Menus />}
         </Toolbar>
       </AppBar>
     </div>
