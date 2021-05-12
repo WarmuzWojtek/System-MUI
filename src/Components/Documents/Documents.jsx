@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => {
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
-        margin: theme.spacing(1),
+        margin: '8px auto',
       }
     },
     image: {
@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => {
     typo: {
       width: '90%',
       color: 'black',
+      margin: '0 auto',
     },
     icon: {
       marginRight: theme.spacing(2),
@@ -64,6 +65,7 @@ const useStyles = makeStyles((theme) => {
     typoTitle: {
       marginBottom: theme.spacing(2),
       borderBottom: '2px solid black',
+      margin: '8px auto',
     }
 
   }
@@ -83,7 +85,7 @@ const Documents = () => {
           <img src={process.env.PUBLIC_URL + '/images/Downloading.svg'} alt='' className={classes.image} />
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
-          <Typography variant='h4' className={classes.typoTitle}>Wymagane zezwolenia:</Typography>
+          <Typography align='center' variant='h4' className={classes.typoTitle}>Wymagane zezwolenia:</Typography>
           <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.6233.28.2014.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
             Zezwolenie na zbieranie odpadów Śr.6233.28.2014

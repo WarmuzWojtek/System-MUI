@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => {
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
-        margin: theme.spacing(1),
+        margin: '8px auto',
       }
 
     },
