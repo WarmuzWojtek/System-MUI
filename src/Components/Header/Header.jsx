@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { theme } from '../../theme'
-import { ThemeProvider, makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'

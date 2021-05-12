@@ -8,7 +8,6 @@ import Slide from '@material-ui/core/Slide';
 const useStyles = makeStyles((theme) => {
   return {
     root: {
-      minHeight: "80vh",
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-between'
@@ -47,7 +46,7 @@ const useStyles = makeStyles((theme) => {
       }
     },
     container: {
-      minHeight: '80vh',
+      minHeight: '60vh',
     },
   }
 })
