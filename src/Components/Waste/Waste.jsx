@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => {
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
-        margin: theme.spacing(1),
+        margin: '8px auto',
       }
     },
     image: {
@@ -69,7 +69,7 @@ const Waste = () => {
           <img src={process.env.PUBLIC_URL + '/images/radioactive.png'} alt='' className={classes.image} />
         </Paper>
         <Paper className={classes.paperImage} elevation='none'>
-          <Typography variant='subtitle1' align='justify'>
+          <Typography variant='subtitle1' align='center'>
             Najczęściej odbierane przez nas odpady:<br />
             - Zużyte urządzenia elektryczne i elektroniczne /monitory, komputery, świetlówki<br />
             - Chemikalia laboratoryjne<br />

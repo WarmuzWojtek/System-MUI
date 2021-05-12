@@ -30,11 +30,11 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'flexStart',
       width: '40%',
       padding: theme.spacing(3),
-      margin: theme.spacing(4),
+      margin: theme.spacing(2),
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
-        margin: theme.spacing(1),
+        margin: '8px auto',
       }
     },
     paperImageText: {
@@ -43,11 +43,11 @@ const useStyles = makeStyles((theme) => {
       justifyContent: 'flexStart',
       width: '40%',
       padding: theme.spacing(3),
-      margin: theme.spacing(4),
+      margin: theme.spacing(2),
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
-        margin: theme.spacing(1),
+        margin: '8px auto',
         justifyContent: 'center',
       }
     },
@@ -63,17 +63,17 @@ const useStyles = makeStyles((theme) => {
       }
     },
     contactContent: {
-      marginLeft: theme.spacing(18),
+      // marginLeft: theme.spacing(18),
       '@media(max-width:860px)': {
-        marginLeft: theme.spacing(0),
+        // marginLeft: theme.spacing(0),
         fontSize: 20,
       }
     },
     contactTitle: {
       marginBottom: theme.spacing(3),
-      marginLeft: theme.spacing(18),
+      // marginLeft: theme.spacing(18),
       '@media(max-width:860px)': {
-        marginLeft: theme.spacing(0),
+        // marginLeft: theme.spacing(0),
         fontSize: 24,
       }
     },
