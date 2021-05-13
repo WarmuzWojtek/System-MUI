@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(1),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
+    borderBottom: '1px solid white',
     '@media(max-width:860px)': {
       paddingTop: theme.spacing(0),
       paddingBottom: theme.spacing(0),
@@ -70,7 +71,7 @@ export default function ButtonAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="absolute" className={classes.appbar} >
+      <AppBar position="absolute" className={classes.appbar} elevation="none">
         <Toolbar className={classes.toolbar}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             <MenuIcon />
