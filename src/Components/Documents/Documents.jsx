@@ -81,32 +81,32 @@ const Documents = () => {
         <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           <Typography variant='h2' className={classes.title}>DECYZJE</Typography>
         </Slide>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/Downloading.svg'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <Typography align='center' variant='h4' className={classes.typoTitle}>Wymagane zezwolenia:</Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.6233.28.2014.pdf'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.6233.28.2014.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
             Zezwolenie na zbieranie odpadów Śr.6233.28.2014
           </Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.7645-1_9_10.pdf'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.7645-1_9_10.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
           Zezwolenie na zbieranie odpadów Śr.7645-1/9/2010
           </Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/OŚZ.III.76449-9_10.pdf'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/OŚZ.III.76449-9_10.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
           Zezwolenie na transport odpadów OŚZ.III.76449-9/10
           </Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/poszerzenie.pdf'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/poszerzenie.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
             Poszerzenie decyzji na zbieranie odpadów
           </Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/NR_GIOŚ.pdf'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/NR_GIOŚ.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
           Zaświadczenie o wpisie do rejestru GIOŚ
           </Typography>
-          <Typography className={classes.typo} variant='subtitle1' align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/decyzje.zip'}>
+          <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/decyzje.zip'}>
             <AttachFileSharpIcon fontSize='large' className={classes.icon} />
           Do pobrania
           </Typography>

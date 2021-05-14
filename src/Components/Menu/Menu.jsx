@@ -33,19 +33,19 @@ export default function Menu() {
       className={classes.root}
     >
       <Scroll to='About' smooth='true'>
-        <Typography className={classes.item} variant='a'>O FIRMIE</Typography>
+        <Typography className={classes.item} component='a'>O FIRMIE</Typography>
       </Scroll>
       <Scroll to='Waste' smooth='true'>
-        <Typography className={classes.item} variant='a'>ODPADY PRZEMYSŁOWE</Typography>
+        <Typography className={classes.item} component='a'>ODPADY PRZEMYSŁOWE</Typography>
       </Scroll>
       <Scroll to='Consulting' smooth='true'>
-        <Typography className={classes.item} variant='a'>DORADZTWO</Typography>
+        <Typography className={classes.item} component='a'>DORADZTWO</Typography>
       </Scroll>
       <Scroll to='Documents' smooth='true'>
-        <Typography className={classes.item} variant='a'>DECYZJE</Typography>
+        <Typography className={classes.item} component='a'>DECYZJE</Typography>
       </Scroll>
       <Scroll to='Contact' smooth='true'>
-        <Typography className={classes.item} variant='a'>KONTAKT</Typography>
+        <Typography className={classes.item} component='a'>KONTAKT</Typography>
       </Scroll>
 
 

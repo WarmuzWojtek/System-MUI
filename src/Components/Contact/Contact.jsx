@@ -8,6 +8,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import useWindowPosition from '../../Hook/useWIndowPosition';
 import Slide from '@material-ui/core/Slide';
 
+
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -92,7 +93,7 @@ const Contact = () => {
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           < Typography variant='h2' className={classes.title}>KONTAKT</Typography>
         </Slide>
-        <Paper className={classes.paperImageText} elevation='none' >
+        <Paper className={classes.paperImageText} elevation={0} >
           <Typography className={classes.contactTitle} variant='h4'>Dane kontaktowe:</Typography>
           <Typography className={classes.contactContent} variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>
           <Typography className={classes.contactContent} variant='h6'>26-340 Drzewica, Trzebina 70</Typography>
@@ -104,7 +105,7 @@ const Contact = () => {
             biuro@system-eko.eu</Typography>
           <img src={process.env.PUBLIC_URL + '/images/Email.svg'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
 
           <ContactForm />
 

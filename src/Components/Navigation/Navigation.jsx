@@ -56,7 +56,7 @@ function CompanyName() {
   )
 }
 
-export default function ButtonAppBar(props) {
+export default function ButtonAppBar() {
   const classes = useStyles();
   const { width } = useViewport();
 
@@ -71,7 +71,7 @@ export default function ButtonAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="absolute" className={classes.appbar} elevation="none">
+      <AppBar position="absolute" className={classes.appbar} elevation={0}>
         <Toolbar className={classes.toolbar}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             <MenuIcon />
