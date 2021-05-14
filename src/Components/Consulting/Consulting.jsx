@@ -59,10 +59,10 @@ const Consultant = () => {
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           <Typography variant='h2' className={classes.title}>DORADZTWO</Typography>
         </Slide>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/consultant.jpg'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <Typography variant='subtitle1' align='justify'>
 
             Oferujemy profesjonalne doradztwo w zakresie obrotu i przewozu towarów niebezpiecznych ADR.

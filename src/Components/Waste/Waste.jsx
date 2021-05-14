@@ -55,7 +55,6 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-
 const Waste = () => {
   const classes = useStyles();
   const checked = useWindowPosition('About', 1.1);
@@ -65,10 +64,10 @@ const Waste = () => {
         <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           <Typography variant='h2' className={classes.title}>ODPADY PRZEMYSŁOWE</Typography>
         </Slide>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/radioactive.png'} alt='' className={classes.image} />
         </Paper>
-        <Paper className={classes.paperImage} elevation='none'>
+        <Paper className={classes.paperImage} elevation={0}>
           <Typography variant='subtitle1' align='center'>
             Najczęściej odbierane przez nas odpady:<br />
             - Zużyte urządzenia elektryczne i elektroniczne /monitory, komputery, świetlówki<br />
@@ -94,9 +93,6 @@ const Waste = () => {
             - Pracownicy naszej firmy wystawiają za klienta wymagane przy odbiorze odpadów dokumenty<br />
             - Prace związane z odbiorem, transportem i unieszkodliwianiem odpadów wykonujemy– zgodnie z obowiązującymi przepisami<br />
             - Dokładamy wszelkich starań by odbierać wszystkie rodzaje odpadów – zobacz listę odpadów<br />
-
-
-
           </Typography>
         </Paper>
       </Container>

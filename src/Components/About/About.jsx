@@ -1,4 +1,4 @@
-import { Collapse, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
@@ -63,11 +63,11 @@ const About = () => {
           <Typography variant='h2' className={classes.title} checked={checked}>O FIRMIE</Typography>
         </Slide >
 
-        <Paper className={classes.paperImage} elevation='none' >
+        <Paper className={classes.paperImage} elevation={0} >
           <img src={process.env.PUBLIC_URL + '/images/team.png'} alt='' className={classes.image} />
         </Paper>
 
-        <Paper className={classes.paperImage} elevation='none' >
+        <Paper className={classes.paperImage} elevation={0} >
           <Typography variant='subtitle1' align='justify' >
 
 
