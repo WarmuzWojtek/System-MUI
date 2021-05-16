@@ -92,11 +92,11 @@ const Documents = () => {
           </Typography>
           <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/Śr.7645-1_9_10.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
-          Zezwolenie na zbieranie odpadów Śr.7645-1/9/2010
+            Zezwolenie na zbieranie odpadów Śr.7645-1/9/2010
           </Typography>
           <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/OŚZ.III.76449-9_10.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
-          Zezwolenie na transport odpadów OŚZ.III.76449-9/10
+            Zezwolenie na transport odpadów OŚZ.III.76449-9/10
           </Typography>
           <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/poszerzenie.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
@@ -104,11 +104,11 @@ const Documents = () => {
           </Typography>
           <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/NR_GIOŚ.pdf'}>
             <PictureAsPdfIcon fontSize='large' className={classes.icon} />
-          Zaświadczenie o wpisie do rejestru GIOŚ
+            Zaświadczenie o wpisie do rejestru GIOŚ
           </Typography>
           <Typography className={classes.typo} align='justify' component='a' href={process.env.PUBLIC_URL + '/docs/decyzje.zip'}>
             <AttachFileSharpIcon fontSize='large' className={classes.icon} />
-          Do pobrania
+            Do pobrania
           </Typography>
         </Paper>
       </Container>

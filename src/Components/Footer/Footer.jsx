@@ -13,18 +13,16 @@ const useStyles = makeStyles((theme) => {
     typo: {
       marginLeft: theme.spacing(10),
     }
-
-
   }
 })
 
-
 const Footer = () => {
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Typography className={classes.typo}>&copy; Rudeboy Design</Typography>
+      <Typography className={classes.typo}>&copy; Rudeboy Design 2021</Typography>
     </div>
   );
 }

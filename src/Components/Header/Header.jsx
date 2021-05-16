@@ -49,7 +49,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  up: {
+  nav: {
     zIndex: 3,
   },
   title: {
@@ -75,17 +75,26 @@ const useStyles = makeStyles({
     '@media(max-width:600px)': {
       fontSize: '30px',
     },
+  },
+  btn: {
+    margin: "40px 0 0 0",
+    color: 'white',
   }
+
 })
 
 const Header = () => {
+
   const classes = useStyles();
+
   const [checked, setChecked] = useState(false);
+
   useEffect(() => {
     setChecked(true)
   }, []);
 
   const { width, height } = useViewport();
+
   const setSource = () => {
     if (width < 860) {
       return `url(${process.env.PUBLIC_URL + '/images/industry4.jpg'})`
@@ -93,12 +102,13 @@ const Header = () => {
       return `url(${process.env.PUBLIC_URL + '/images/industry6.jpg'})`
     } else return `url(${process.env.PUBLIC_URL + '/images/industry1.jpg'})`
   }
+
   const source = setSource();
 
   return (
     <div id='Header'>
       <Container className={classes.root} style={{ backgroundImage: source }}>
-        <Navigation className={classes.up} />
+        <Navigation className={classes.nav} />
         <Container className={classes.content}>
           <Collapse
             in={checked}
@@ -107,7 +117,7 @@ const Header = () => {
             <Typography variant='h1' className={classes.title}>P.H.U. SYSTEM</Typography>
             <Typography variant='h4' className={classes.subTitle}>ZAGOSPODAROWANIE ODPADÓW PRZEMYSŁOWYCH</Typography>
             <Scroll to='About' smooth='true'>
-              <Button variant='contained' color='secondary' style={{ margin: "40px 0 0 0", color: 'white' }}>Dowiedz się więcej</Button>
+              <Button variant='contained' color='secondary' className={classes.btn}>Dowiedz się więcej</Button>
             </Scroll>
           </Collapse>
         </Container>
