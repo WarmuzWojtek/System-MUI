@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(2),
-      // width: '25ch',
       width: '80%',
     },
   },
@@ -30,8 +29,12 @@ export default function ContactForm() {
   const [emailValue, setEmailValue] = useState();
   const [topicValue, setTopicValue] = useState();
   const [messageValue, setMessageValue] = useState();
+
   function sendEmail(e) {
     e.preventDefault();
+
+    const emailValidate = emailValue.includes('@');
+    if (!emailValidate) return alert('Nieprawidłowy adres email!');
 
     emailjs
       .sendForm(
@@ -72,7 +75,7 @@ export default function ContactForm() {
       <Typography className={classes.title} variant='h4'>NAPISZ DO NAS:</Typography>
       <TextField id="name" label="Imię i Nazwisko" variant="outlined" name="name"
         value={nameValue} onChange={handleNameChange} />
-      <TextField id="email" label="Twój Email" variant="outlined" name="email"
+      <TextField type='email' id="email" label="Twój Email" variant="outlined" name="email"
         value={emailValue} onChange={handleEmailChange} />
       <TextField id="topic" label="Temat" variant="outlined" name="topic"
         value={topicValue} onChange={handleTopicChange} />
