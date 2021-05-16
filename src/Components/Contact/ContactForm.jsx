@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography'
@@ -25,16 +25,18 @@ const useStyles = makeStyles((theme) => ({
 export default function ContactForm() {
   const classes = useStyles();
 
-  const [nameValue, setNameValue] = useState();
-  const [emailValue, setEmailValue] = useState();
-  const [topicValue, setTopicValue] = useState();
-  const [messageValue, setMessageValue] = useState();
+  const [nameValue, setNameValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [topicValue, setTopicValue] = useState('');
+  const [messageValue, setMessageValue] = useState('');
 
   function sendEmail(e) {
     e.preventDefault();
 
     const emailValidate = emailValue.includes('@');
     if (!emailValidate) return alert('Nieprawidłowy adres email!');
+    const nameValidate = nameValue;
+    if (!nameValidate) return alert('Przedstaw się proszę!');
 
     emailjs
       .sendForm(
