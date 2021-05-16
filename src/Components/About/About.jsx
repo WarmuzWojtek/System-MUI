@@ -62,28 +62,18 @@ const About = () => {
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
           <Typography variant='h2' className={classes.title} checked={checked}>O FIRMIE</Typography>
         </Slide >
-
         <Paper className={classes.paperImage} elevation={0} >
           <img src={process.env.PUBLIC_URL + '/images/team.png'} alt='' className={classes.image} />
         </Paper>
-
         <Paper className={classes.paperImage} elevation={0} >
           <Typography variant='subtitle1' align='justify' >
-
-
             P.H.U System świadczy usługi w zakresie gospodarowania odpadami niebezpiecznymi i innymi niż niebezpieczne.
-
             Obsługujemy przedsiębiorstwa w obszarze ochrony środowiska zajmując się odbiorem, transportem i ponownym wykorzystaniem odpadów przemysłowych z terenu całego kraju. Zapewniamy szybki i terminowy odbiór odpadów od wytwórcy specjalistycznym transportem (spełniającym przepisy ADR).
-
             Gwarantujemy naszym klientom profesjonalną obsługę, zgodną z obowiązującym prawem. Doświadczenie kadry pracującej w naszej firmie, szybka i profesjonalna obsługa, atrakcyjne warunki współpracy sprawiły, że zaufało nam wielu klientów.
-
             Zapraszamy do współpracy.
-
-        </Typography>
+          </Typography>
         </Paper>
-
       </Container>
-
     </div>
   );
 }

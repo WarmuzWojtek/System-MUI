@@ -64,17 +64,13 @@ const useStyles = makeStyles((theme) => {
       }
     },
     contactContent: {
-      // marginLeft: theme.spacing(18),
       '@media(max-width:860px)': {
-        // marginLeft: theme.spacing(0),
         fontSize: 20,
       }
     },
     contactTitle: {
       marginBottom: theme.spacing(3),
-      // marginLeft: theme.spacing(18),
       '@media(max-width:860px)': {
-        // marginLeft: theme.spacing(0),
         fontSize: 24,
       }
     },
@@ -106,9 +102,7 @@ const Contact = () => {
           <img src={process.env.PUBLIC_URL + '/images/Email.svg'} alt='' className={classes.image} />
         </Paper>
         <Paper className={classes.paperImage} elevation={0}>
-
           <ContactForm />
-
         </Paper>
       </Container>
     </div>
