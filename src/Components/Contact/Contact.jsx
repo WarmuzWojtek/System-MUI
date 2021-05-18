@@ -87,7 +87,7 @@ const Contact = () => {
     <div id='Contact'>
       <Container className={classes.root}>
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
-          < Typography variant='h2' className={classes.title}>KONTAKT</Typography>
+          < Typography variant='h2' className={classes.title} align='center'>KONTAKT</Typography>
         </Slide>
         <Paper className={classes.paperImageText} elevation={0} >
           <Typography className={classes.contactTitle} variant='h4'>Dane kontaktowe:</Typography>

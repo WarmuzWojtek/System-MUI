@@ -60,7 +60,7 @@ const About = () => {
 
       <Container className={classes.root} >
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
-          <Typography variant='h2' className={classes.title} checked={checked}>O FIRMIE</Typography>
+          <Typography variant='h2' className={classes.title} checked={checked} align='center'>O FIRMIE</Typography>
         </Slide >
         <Paper className={classes.paperImage} elevation={0} >
           <img src={process.env.PUBLIC_URL + '/images/team.png'} alt='' className={classes.image} />

@@ -62,7 +62,7 @@ const Waste = () => {
     <div className={classes.bcg} id='Waste'>
       <Container className={classes.root}>
         <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
-          <Typography variant='h2' className={classes.title}>ODPADY PRZEMYSŁOWE</Typography>
+          <Typography variant='h2' className={classes.title} align='center'>ODPADY PRZEMYSŁOWE</Typography>
         </Slide>
         <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/radioactive.png'} alt='' className={classes.image} />
