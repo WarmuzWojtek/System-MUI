@@ -8,7 +8,6 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import useWindowPosition from '../../Hook/useWIndowPosition';
 import Slide from '@material-ui/core/Slide';
 
-
 const useStyles = makeStyles((theme) => {
   return {
     root: {
@@ -27,11 +26,8 @@ const useStyles = makeStyles((theme) => {
       }
     },
     paperImage: {
-      display: 'flex',
-      alignItems: 'flexStart',
       width: '40%',
       padding: theme.spacing(3),
-      margin: theme.spacing(2),
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
@@ -39,17 +35,12 @@ const useStyles = makeStyles((theme) => {
       }
     },
     paperImageText: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flexStart',
       width: '40%',
       padding: theme.spacing(3),
-      margin: theme.spacing(2),
       '@media(max-width:860px)': {
         width: '90%',
         padding: theme.spacing(1),
         margin: '8px auto',
-        justifyContent: 'center',
       }
     },
     image: {
@@ -64,11 +55,15 @@ const useStyles = makeStyles((theme) => {
       }
     },
     contactContent: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       '@media(max-width:860px)': {
         fontSize: 20,
       }
     },
     contactTitle: {
+      textAlign: 'center',
       marginBottom: theme.spacing(3),
       '@media(max-width:860px)': {
         fontSize: 24,
@@ -91,8 +86,10 @@ const Contact = () => {
         </Slide>
         <Paper className={classes.paperImageText} elevation={0} >
           <Typography className={classes.contactTitle} variant='h4'>Dane kontaktowe:</Typography>
-          <Typography className={classes.contactContent} variant='h6'>P.H.U SYSTEM Sławomir Kośka</Typography>
-          <Typography className={classes.contactContent} variant='h6'>26-340 Drzewica, Trzebina 70</Typography>
+          <Typography className={classes.contactContent} variant='h6'>P.H.U SYSTEM</Typography>
+          <Typography className={classes.contactContent} variant='h6'>Sławomir Kośka</Typography>
+          <Typography className={classes.contactContent} variant='h6'>Trzebina 70</Typography>
+          <Typography className={classes.contactContent} variant='h6'>26-340 Drzewica</Typography>
           <Typography className={classes.contactContent} variant='h6'>
             <PhoneIcon className={classes.phone} />
             +48 604 383 868</Typography>

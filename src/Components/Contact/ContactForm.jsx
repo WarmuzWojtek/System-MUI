@@ -7,6 +7,9 @@ import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     '& > *': {
       margin: theme.spacing(2),
       width: '80%',
@@ -74,14 +77,14 @@ export default function ContactForm() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off" onSubmit={sendEmail}>
-      <Typography className={classes.title} variant='h4'>NAPISZ DO NAS:</Typography>
+      <Typography className={classes.title} variant='h4' align='center'>NAPISZ DO NAS:</Typography>
       <TextField id="name" label="Imię i Nazwisko" variant="outlined" name="name"
         value={nameValue} onChange={handleNameChange} />
       <TextField type='email' id="email" label="Twój Email" variant="outlined" name="email"
         value={emailValue} onChange={handleEmailChange} />
       <TextField id="topic" label="Temat" variant="outlined" name="topic"
         value={topicValue} onChange={handleTopicChange} />
-      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={7} name="message"
+      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={9} name="message"
         value={messageValue} onChange={handleMessageChange} />
       <Button type='submit' className={classes.btn} color='primary' variant='contained'>WYŚLIJ</Button>
     </form>
