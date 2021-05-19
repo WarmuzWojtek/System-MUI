@@ -79,7 +79,7 @@ const Documents = () => {
     <div className={classes.bcg} id='Documents'>
       <Container className={classes.root}>
         <Slide direction="right" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
-          <Typography variant='h2' className={classes.title}>DECYZJE</Typography>
+          <Typography variant='h2' className={classes.title} align='center'>DECYZJE</Typography>
         </Slide>
         <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/Downloading.svg'} alt='' className={classes.image} />

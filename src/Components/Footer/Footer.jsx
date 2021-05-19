@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
     },
     typo: {
-      marginLeft: theme.spacing(10),
+      marginLeft: '5vw',
     }
   }
 })

@@ -56,7 +56,7 @@ const Consultant = () => {
     <div id='Consulting'>
       <Container className={classes.root}>
         <Slide direction="left" in={checked} {...(checked ? { timeout: 1000 } : {})} mountOnEnter unmountOnExit>
-          <Typography variant='h2' className={classes.title}>DORADZTWO</Typography>
+          <Typography variant='h2' className={classes.title} align='center'>DORADZTWO</Typography>
         </Slide>
         <Paper className={classes.paperImage} elevation={0}>
           <img src={process.env.PUBLIC_URL + '/images/consultant.jpg'} alt='' className={classes.image} />
