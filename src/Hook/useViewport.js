@@ -1,6 +1,6 @@
-import React, {useState,useEffect}  from 'react'
+import React, {useState,useEffect, createContext, useContext}  from 'react'
 
-const viewportContext = React.createContext({});
+const viewportContext = createContext({});
 
 export const ViewportProvider = ({ children }) => {
 
@@ -27,6 +27,6 @@ export const ViewportProvider = ({ children }) => {
 
 export const useViewport = () => {
 
-  const { width, height } = React.useContext(viewportContext);
+  const { width, height } = useContext(viewportContext);
   return { width, height };
 }

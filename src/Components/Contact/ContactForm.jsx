@@ -4,6 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import emailjs from "emailjs-com";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +34,11 @@ export default function ContactForm() {
   const [emailValue, setEmailValue] = useState('');
   const [topicValue, setTopicValue] = useState('');
   const [messageValue, setMessageValue] = useState('');
+  const [checked, setChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setChecked(!checked);
+  };
 
   function sendEmail(e) {
     e.preventDefault();
@@ -84,9 +91,19 @@ export default function ContactForm() {
         value={emailValue} onChange={handleEmailChange} />
       <TextField id="topic" label="Temat" variant="outlined" name="topic"
         value={topicValue} onChange={handleTopicChange} />
-      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={9} name="message"
+      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={7} name="message"
         value={messageValue} onChange={handleMessageChange} />
-      <Button type='submit' className={classes.btn} color='primary' variant='contained'>WYŚLIJ</Button>
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={checked}
+            onChange={handleCheckboxChange}
+            color="primary"
+          />
+        }
+        label="Zapoznałem/am się z Komunikatem o ochronie danych osobowych"
+      />
+      <Button type='submit' className={classes.btn} color='primary' variant='contained' disabled={!checked}>WYŚLIJ</Button>
     </form>
   );
 }
