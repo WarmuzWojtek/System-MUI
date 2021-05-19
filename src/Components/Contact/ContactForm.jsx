@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button'
 import emailjs from "emailjs-com";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import Modal from '../Modal/Modal'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,12 +16,16 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(2),
       width: '80%',
+      '@media(max-width:600px)': {
+        width: '90%',
+      }
     },
   },
   btn: {
     width: '40%',
   },
   title: {
+    margin: 0,
     '@media(max-width:860px)': {
       fontSize: '20px'
     }
@@ -85,14 +90,36 @@ export default function ContactForm() {
   return (
     <form className={classes.root} noValidate autoComplete="off" onSubmit={sendEmail}>
       <Typography className={classes.title} variant='h4' align='center'>NAPISZ DO NAS:</Typography>
-      <TextField id="name" label="Imię i Nazwisko" variant="outlined" name="name"
-        value={nameValue} onChange={handleNameChange} />
-      <TextField type='email' id="email" label="Twój Email" variant="outlined" name="email"
-        value={emailValue} onChange={handleEmailChange} />
-      <TextField id="topic" label="Temat" variant="outlined" name="topic"
-        value={topicValue} onChange={handleTopicChange} />
-      <TextField id="message" label="Wiadomość" variant="outlined" multiline rows={7} name="message"
-        value={messageValue} onChange={handleMessageChange} />
+      <TextField
+        id="name"
+        label="Imię i Nazwisko"
+        variant="outlined"
+        name="name"
+        value={nameValue}
+        onChange={handleNameChange} />
+      <TextField
+        type='email'
+        id="email"
+        label="Twój Email"
+        variant="outlined"
+        name="email"
+        value={emailValue}
+        onChange={handleEmailChange} />
+      <TextField
+        id="topic"
+        label="Temat"
+        variant="outlined"
+        name="topic"
+        value={topicValue}
+        onChange={handleTopicChange} />
+      <TextField
+        id="message"
+        label="Wiadomość"
+        variant="outlined"
+        multiline rows={5}
+        name="message"
+        value={messageValue}
+        onChange={handleMessageChange} />
       <FormControlLabel
         control={
           <Checkbox
@@ -101,9 +128,10 @@ export default function ContactForm() {
             color="primary"
           />
         }
-        label="Zapoznałem/am się z Komunikatem o ochronie danych osobowych"
+        label='Zapoznałem/am się z "Komunikatem o ochronie danych osobowych"'
       />
-      <Button type='submit' className={classes.btn} color='primary' variant='contained' disabled={!checked}>WYŚLIJ</Button>
+      <Modal checked={checked} />
+      <Button type='submit' className={classes.btn} color='primary' variant='contained' disabled={!checked}>wyślij</Button>
     </form>
   );
 }
