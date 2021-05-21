@@ -1,7 +1,7 @@
 # Landing page made for my friend
 
 ## technologies:
-React
+ReactJS,
 Material UI
 
 ![system](https://user-images.githubusercontent.com/65849475/119112777-bef13580-ba24-11eb-8824-93fa51e0f522.jpg)
